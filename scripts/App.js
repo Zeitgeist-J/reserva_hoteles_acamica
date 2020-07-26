@@ -3,11 +3,16 @@ class App extends React.Component {
         dates: {
             initialDate: moment(),
             finalDate: moment().add(7, 'days')
-        }
+        },
+        hotels: hotelsData
     }
 
     render() {
-        return <Header {...this.state.dates} />;
+        return <div>
+            <Header {...this.state.dates} />
+            <Filters {...this.state.dates} />
+            <HotelsContainer hotels={this.state.hotels} />
+        </div>;
     }
 }
 
