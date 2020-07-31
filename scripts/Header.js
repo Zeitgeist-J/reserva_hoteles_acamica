@@ -15,7 +15,7 @@ const Header = (props) => {
     return (
         <div className="header">
             <h1>Reserva de hoteles</h1>
-            <p>Desde el {buildDateFormat(initialDate)} hasta {buildDateFormat(finalDate)}</p>
+            <p>Desde el {buildDateFormat(initialDate)} hasta el {buildDateFormat(finalDate)}</p>
         </div>
     )
 }
