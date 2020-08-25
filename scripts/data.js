@@ -221,3 +221,18 @@ const hotelsData = [
     price: 1
   }
 ]
+
+const countriesAndCities = hotelsData.reduce((countries, hotel) => {
+  const countryIndex = countries.findIndex((country) => hotel.country === country.name);
+  if (countryIndex === -1) {
+    countries.push({
+      name: hotel.country,
+      cities: [hotel.city]
+    });
+  } else if (!countries[countryIndex].cities.find((city) => city === hotel.city)) {
+    countries[countryIndex].cities.push(hotel.city);
+  }
+  return countries;
+}, []);
+
+const prices = [1, 2, 3, 4]
