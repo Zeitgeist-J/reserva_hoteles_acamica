@@ -1,4 +1,4 @@
-# reserva_hoteles_react
+# Reserva hoteles | React.js
  Proyecto primer bloque carrera FrontEnd avanzado en React (FAR). Acámica.
  Proyecto construido en react usándo únicamente CDN's para su configuración
 
