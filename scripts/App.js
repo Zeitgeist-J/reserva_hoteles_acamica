@@ -2,11 +2,12 @@ class App extends React.Component {
     state = {
         dates: {
             initialDate: moment(),
-            finalDate: moment().add(7, 'days')
+            finalDate: null
         },
         hotels: hotelsData,
-        selectedCity: null,
-        selectedCoutry: null
+        selectedCountry: null,
+        selectedPrice: null,
+        selectedSize: null,
     }
 
     onDateChange = (event) => {
@@ -25,8 +26,15 @@ class App extends React.Component {
         }
     }
 
+    onFilterChange = (e) => {
+        e.persist();
+        const { target } = e;
+        // console.log(target.options)
+        this.setState({ [target.name]: target.value })
+    }
+
     render() {
-        const { dates, selectedCity, selectedCoutry, hotels } = this.state
+        const { dates, selectedCity, selectedCountry, hotels, selectedSize } = this.state;
         return <div>
             <Header {...dates} />
             <Filters
@@ -34,8 +42,10 @@ class App extends React.Component {
                 ...dates
                 }
                 selectedCity={selectedCity}
-                selectedCoutry={selectedCoutry}
-                dateChange={this.onDateChange} />
+                selectedCountry={selectedCountry}
+                selectedSize={selectedSize}
+                dateChange={this.onDateChange}
+                filterChange={this.onFilterChange} />
             <HotelsContainer hotels={hotels} />
         </div>;
     }

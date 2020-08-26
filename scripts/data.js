@@ -222,17 +222,14 @@ const hotelsData = [
   }
 ]
 
-const countriesAndCities = hotelsData.reduce((countries, hotel) => {
-  const countryIndex = countries.findIndex((country) => hotel.country === country.name);
-  if (countryIndex === -1) {
-    countries.push({
-      name: hotel.country,
-      cities: [hotel.city]
-    });
-  } else if (!countries[countryIndex].cities.find((city) => city === hotel.city)) {
-    countries[countryIndex].cities.push(hotel.city);
-  }
-  return countries;
-}, []);
+const countries = hotelsData.reduce((countries, hotel) => countries.findIndex((country) => country === hotel.country) === -1 ?
+  [...countries, hotel.country] : countries
+  , []);
 
-const prices = [1, 2, 3, 4]
+const prices = [1, 2, 3, 4];
+
+const sizes = ['pequeño', 'mediano', 'grande']
+
+const weekDays = 'Domingo_Lunes_Martes_Miércoles_Jueves_Viernes_Sábado'.split('_');
+
+const months = 'enero_febrero_marzo_abril_mayo_junio_julio_agosto_septiembre_octubre_noviembre_diciembre'.split('_');
