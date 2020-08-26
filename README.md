@@ -1,7 +1,6 @@
-# reserva_hoteles_acamica
- Proyecto primer bloque.
-
- Carrera FrontEnd avanzado en React (FAR) de Acámica
+# reserva_hoteles_react
+ Proyecto primer bloque carrera FrontEnd avanzado en React (FAR). Acámica.
+ Proyecto construido en react usándo únicamente CDN's para su configuración
 
  Author: Nicolás Macias
  a.k.a Zeitgeist-J
